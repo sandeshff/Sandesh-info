@@ -188,14 +188,14 @@ class InfoCommands(commands.Cog):
             region = basic_info.get('region', 'Not found')
 
             embed = discord.Embed(
-                title=" Player Information",
+                title=" Player Information :",
                 color=discord.Color.blurple(),
                 timestamp=datetime.now()
             )
             embed.set_thumbnail(url=ctx.author.display_avatar.url)
 
             embed.add_field(name="", value="\n".join([
-                "**┌  ACCOUNT BASIC INFO**",
+                "**┌  Account Basic Information**",
                 f"**├─ Name**: {basic_info.get('nickname', 'Not found')}",
                 f"**├─ UID**: `{uid}`",
                 f"**├─ Level**: {basic_info.get('level', 'Not found')} (Exp: {basic_info.get('exp', '?')})",
@@ -207,7 +207,7 @@ class InfoCommands(commands.Cog):
           
 
             embed.add_field(name="", value="\n".join([
-                "**┌  ACCOUNT ACTIVITY**",
+                "**┌  Account Activity**",
                 f"**├─ Most Recent OB**: {basic_info.get('releaseVersion', '?')}",
                 f"**├─ Current BP Badges**: {basic_info.get('badgeCnt', 'Not found')}",
                 f"**├─ BR Rank**: {'' if basic_info.get('showBrRank') else 'Not found'} {basic_info.get('rankingPoints', '?')}",
@@ -218,7 +218,7 @@ class InfoCommands(commands.Cog):
             ]), inline=False)
 
             embed.add_field(name="", value="\n".join([
-                "**┌  ACCOUNT OVERVIEW**",
+                "**┌  Account Overview**",
                 f"**├─ Avatar ID**: {profile_info.get('avatarId', 'Not found')}",
                 f"**├─ Banner ID**: {basic_info.get('bannerId', 'Not found')}",
                 f"**├─ Pin ID**: {captain_info.get('pinId', 'Not found') if captain_info else 'Default'}",
@@ -226,7 +226,7 @@ class InfoCommands(commands.Cog):
             ]), inline=False)
 
             embed.add_field(name="", value="\n".join([
-                "**┌  PET DETAILS**",
+                "**┌  Pet Details**",
                 f"**├─ Equipped?**: {'Yes' if pet_info.get('isSelected') else 'Not Found'}",
                 f"**├─ Pet Name**: {pet_info.get('name', 'Not Found')}",
                 f"**├─ Pet Exp**: {pet_info.get('exp', 'Not Found')}",
